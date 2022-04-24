@@ -25,8 +25,8 @@
                 <li>
                     <div class="grey" id="AC" onclick="deleteNumber()">AC</div>
                     <div class="grey" id="nrgativeButton" onclick="turnNegative()">+/_</div>
-                    <div class="grey">%</div>
-                    <div class="orange">%</div>
+                    <div class="grey" id="porcent" onclick="porcent()">%</div>
+                    <div class="orange" onclick="getOperadores('/')">/</div>
                 </li>
             </ul>
             <ul>
@@ -34,30 +34,30 @@
                     <div class="black" onclick="getNumber(7)">7</div>
                     <div class="black" onclick="getNumber(8)">8</div>
                     <div class="black" onclick="getNumber(9)">9</div>
-                    <div class="orange">X</div>
+                    <div class="orange" onclick="getOperadores('*')">X</div>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <div class="black" onClick="getNumber(4)">4</div>
-                    <div class="black" onClick="getNumber(5)">5</div>
-                    <div class="black" onClick="getNumber(6)">6</div>
-                    <div class="orange" onClick="getOperation('-')">-</div>
+                    <div class="black" onclick="getNumber(4)">4</div>
+                    <div class="black" onclick="getNumber(5)">5</div>
+                    <div class="black" onclick="getNumber(6)">6</div>
+                    <div class="orange" onclick="getOperadores('-')">-</div>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <div class="black" onClick="getNumber(1)">1</div>
-                    <div class="black" onClick="getNumber(2)">2</div>
-                    <div class="black" onClick="getNumber(3)">3</div>
-                    <div class="orange" onClick="getOperation('+')">+</div>
+                    <div class="black" onclick="getNumber(1)">1</div>
+                    <div class="black" onclick="getNumber(2)">2</div>
+                    <div class="black" onclick="getNumber(3)">3</div>
+                    <div class="orange" onclick="getOperadores('+')">+</div>
                 </li>
             </ul>
             <ul>
                 <li>
                     <div class="black" onclick="getNumber(0)" id="zero">0</div>
                     <div class="black">,</div>
-                    <div class="black">=</div>
+                    <div class="black" id="resulted" onclick="resulted()">=</div>
                 </li>
             </ul>
         </div>
