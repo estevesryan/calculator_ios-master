@@ -3,6 +3,9 @@ document.getElementsByClassName('black');
 document.getElementsByClassName('orange');
 document.getElementsByClassName("gray")
 
+//to turn numbers to negative
+negativeButton = document.getElementById('negativeButton')
+
 class makeNumber01 {
     constructor (numbers01) {
         this.values = numbers01
@@ -61,7 +64,7 @@ function makeN2(){
 
 //display numbers
 function displayNumbers () {
-    display.innerHTML = numberInserted.join('')
+    display.innerHTML = numbers01
 
     if (numberInserted.length > 0){
         del.innerHTML = "C" 
@@ -74,42 +77,23 @@ function displayNumbers () {
 //delete button
 function deleteNumber(){
     numberInserted.pop()
+    if (numbers01 < 0){
+        numbers01 = parseInt(numberInserted.join(''))
+        turnNegative()
+    }
+    else{
+        numbers01 = parseInt(numberInserted.join(''))
+    }
     displayNumbers()
     if (numberInserted.length <= 0) {
         display.innerHTML = 0
     }
 }
 
-/*let getNumber = (number) => {
-    let digitsTotal = firstDigits.length 
-    if (digitsTotal <= 7) {
-        firstDigits.push(number)
-        console.log(firstDigits)
-        allNumber = firstDigits.join('')
-        console.log(allNumber)
-        display.innerHTML = allNumber
-    } */
-    
- 
-/*
-    //call function to turn button
-    turnButton(firstDigits[0])
-    
-    return firstDigits
-
-    //function to turn button from AC to C
-    const turnButton = (number) => {
-    if (allNumber > 0) {
-            del.innerHTML = "C"
-    }
-    else {
-        del.innerHTML = "AC"
-    }
+function turnNegative () {
+    numbers01 = numbers01 * -1
+    displayNumbers()
 }
-*/
-//functio delete number
-
-//criar o display que incrementa com o resultado
 
 //criar função calcular usa uma variavel que receber o valor do DOM para definir qual sera a operação
 
