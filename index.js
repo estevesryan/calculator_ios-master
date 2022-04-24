@@ -26,7 +26,7 @@ const display = document.getElementById('display')
 let numberInserted = new Array ();
 let numbers01;
 let n1;
-
+let n2;
 
 
 //pick up number from keyboard
@@ -43,7 +43,7 @@ function getNumber (number){
     console.log(numInsert[0])
     }
     else {
-        alert("Numer maximo alcançado")
+        alert("Numero maximo alcançado")
     }
 }
 
@@ -62,8 +62,23 @@ function makeN2(){
 //display numbers
 function displayNumbers () {
     display.innerHTML = numberInserted.join('')
+
+    if (numberInserted.length > 0){
+        del.innerHTML = "C" 
+    }
+    else {
+        del.innerHTML = "AC"
+    }
 }
 
+//delete button
+function deleteNumber(){
+    numberInserted.pop()
+    displayNumbers()
+    if (numberInserted.length <= 0) {
+        display.innerHTML = 0
+    }
+}
 
 /*let getNumber = (number) => {
     let digitsTotal = firstDigits.length 
@@ -93,15 +108,6 @@ function displayNumbers () {
 }
 */
 //functio delete number
-function deleteNumber(){
-    firstDigits.pop()
-    console.log(firstDigits.join(''))
-    allNumber = firstDigits.join('')
-    display.innerHTML = allNumber
-    if (allNumber <= 0) {
-        display.innerHTML = 0
-    }
-}
 
 //criar o display que incrementa com o resultado
 
