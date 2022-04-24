@@ -24,16 +24,16 @@
             <ul>
                 <li>
                     <div class="grey" id="AC" onclick="deleteNumber()">AC</div>
-                    <div class="grey">+/_</div>
+                    <div class="grey" onclick="getOperation('+')">+/_</div>
                     <div class="grey">%</div>
                     <div class="orange">%</div>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <div class="black">7</div>
-                    <div class="black">8</div>
-                    <div class="black">9</div>
+                    <div class="black" onclick="getNumber(7)">7</div>
+                    <div class="black" onclick="getNumber(8)">8</div>
+                    <div class="black" onclick="getNumber(9)">9</div>
                     <div class="orange">X</div>
                 </li>
             </ul>
@@ -55,7 +55,7 @@
             </ul>
             <ul>
                 <li>
-                    <div class="black" id="zero">0</div>
+                    <div class="black" onclick="getNumber(0)" id="zero">0</div>
                     <div class="black">,</div>
                     <div class="black">=</div>
                 </li>

@@ -9,6 +9,7 @@ const del = document.getElementById('AC')
 const display = document.getElementById('display')
 let firstDigits = new Array
 let secondsDigits = new Array
+let result = new Array
 let allNumber
 
 
@@ -32,14 +33,18 @@ let getNumber = (number) => {
 }
     //function to turn button from AC to C
     const turnButton = (number) => {
-        if (number > 0) {
+    if (allNumber > 0) {
             del.innerHTML = "C"
+    }
+    else {
+        del.innerHTML = "AC"
     }
 }
 
 //functio delete number
 function deleteNumber(){
     firstDigits.pop()
+    console.log(firstDigits.join(''))
     allNumber = firstDigits.join('')
     display.innerHTML = allNumber
     if (allNumber <= 0) {
@@ -49,8 +54,24 @@ function deleteNumber(){
 
 
 
-let getOperation = (operation) => {
-    
+function getOperation (operation,){
+    display.innerHTML = secondsDigits
+    let digitsTotal = secondsDigits.length 
+    if (digitsTotal <= 7) {
+        secondsDigits.push(5)
+        console.log(secondsDigits)
+        allNumber02 = secondsDigits.join('')
+        console.log(allNumber02)
+        display.innerHTML = allNumber
+    }
+
+    if (operation == "+"){
+        allNumber = firstDigits.join('')
+        allNumber02 = secondsDigits.join('')
+        result = parseInt(allNumber) + parseInt(allNumber02)
+        return result
+        }
+  display.innerHTML = result
 }
 
 
