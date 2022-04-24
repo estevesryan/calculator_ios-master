@@ -3,27 +3,54 @@ document.getElementsByClassName('black');
 document.getElementsByClassName('orange');
 document.getElementsByClassName("gray")
 
+//button delete
+const del = document.getElementById('AC')
+
 const display = document.getElementById('display')
-let digits = new Array
+let firstDigits = new Array
+let secondsDigits = new Array
+let allNumber
 
 
-let newNumber;
-let operation;
 
+//pick up number from keyboard
 let getNumber = (number) => {
-    let digitsTotal = digits.length + 1
-    if (digitsTotal <= 8) {
-        digits.push(number)
-        console.log(digits)
-        let allNumber = digits.join('')
+    let digitsTotal = firstDigits.length 
+    if (digitsTotal <= 7) {
+        firstDigits.push(number)
+        console.log(firstDigits)
+        allNumber = firstDigits.join('')
         console.log(allNumber)
         display.innerHTML = allNumber
     }
-    return newNumber;
+    
+    
+    //call function to turn button
+    turnButton(firstDigits[0])
+    
+    return firstDigits
+}
+    //function to turn button from AC to C
+    const turnButton = (number) => {
+        if (number > 0) {
+            del.innerHTML = "C"
+    }
 }
 
-let getOperation = (operation) => {
+//functio delete number
+function deleteNumber(){
+    firstDigits.pop()
+    allNumber = firstDigits.join('')
+    display.innerHTML = allNumber
+    if (allNumber <= 0) {
+        display.innerHTML = 0
+    }
+}
 
+
+
+let getOperation = (operation) => {
+    
 }
 
 
