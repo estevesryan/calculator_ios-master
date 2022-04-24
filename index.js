@@ -3,19 +3,69 @@ document.getElementsByClassName('black');
 document.getElementsByClassName('orange');
 document.getElementsByClassName("gray")
 
+class makeNumber01 {
+    constructor (numbers01) {
+        this.values = numbers01
+    }
+}
+
+class makeNumber02 {
+    constructor (numbers01) {
+        this.values = numbers01
+    }
+}
+
+
+
 //button delete
 const del = document.getElementById('AC')
 
 const display = document.getElementById('display')
-let firstDigits = new Array
-let secondsDigits = new Array
-let result = new Array
-let allNumber
+
+//chamar uma função para limpar essas variaveis
+let numberInserted = new Array ();
+let numbers01;
+let n1;
 
 
 
 //pick up number from keyboard
-let getNumber = (number) => {
+function getNumber (number){
+    const numInsert = new Array();
+    if (numberInserted.length < 8){
+    numInsert.pop()
+    numInsert.push(number)
+    numberInserted.push(numInsert[0])
+
+    //transform string to number
+    numbers01 = parseInt(numberInserted.join('')) 
+    displayNumbers()
+    console.log(numInsert[0])
+    }
+    else {
+        alert("Numer maximo alcançado")
+    }
+}
+
+//first digits
+function makeN1() {
+    n1 = new makeNumber01(numbers01).values
+    console.log(n1)
+}
+
+//seconds digits
+function makeN2(){
+    n2 = new makeNumber02 (numbers01).values
+    console.log(n2)
+}
+
+//display numbers
+function displayNumbers () {
+    display.innerHTML = numberInserted.join('')
+}
+
+
+/*let getNumber = (number) => {
     let digitsTotal = firstDigits.length 
     if (digitsTotal <= 7) {
         firstDigits.push(number)
@@ -23,14 +73,15 @@ let getNumber = (number) => {
         allNumber = firstDigits.join('')
         console.log(allNumber)
         display.innerHTML = allNumber
-    }
+    } */
     
-    
+ 
+/*
     //call function to turn button
     turnButton(firstDigits[0])
     
     return firstDigits
-}
+
     //function to turn button from AC to C
     const turnButton = (number) => {
     if (allNumber > 0) {
@@ -40,7 +91,7 @@ let getNumber = (number) => {
         del.innerHTML = "AC"
     }
 }
-
+*/
 //functio delete number
 function deleteNumber(){
     firstDigits.pop()
@@ -51,30 +102,6 @@ function deleteNumber(){
         display.innerHTML = 0
     }
 }
-
-
-
-function getOperation (operation,){
-    display.innerHTML = secondsDigits
-    let digitsTotal = secondsDigits.length 
-    if (digitsTotal <= 7) {
-        secondsDigits.push(5)
-        console.log(secondsDigits)
-        allNumber02 = secondsDigits.join('')
-        console.log(allNumber02)
-        display.innerHTML = allNumber
-    }
-
-    if (operation == "+"){
-        allNumber = firstDigits.join('')
-        allNumber02 = secondsDigits.join('')
-        result = parseInt(allNumber) + parseInt(allNumber02)
-        return result
-        }
-  display.innerHTML = result
-}
-
-
 
 //criar o display que incrementa com o resultado
 
